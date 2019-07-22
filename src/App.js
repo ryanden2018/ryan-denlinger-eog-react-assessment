@@ -7,7 +7,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import Wrapper from "./components/Wrapper";
-import PlotMeta from "./components/PlotMeta";
+import PlotContainer from "./components/PlotContainer";
 
 const store = createStore();
 const theme = createMuiTheme({
@@ -33,7 +33,7 @@ const App = props => (
     <Provider store={store}>
       <Wrapper>
         <Header />
-        <PlotMeta metricName="casingPressure" />
+        <PlotContainer />
         <ToastContainer />
       </Wrapper>
     </Provider>
