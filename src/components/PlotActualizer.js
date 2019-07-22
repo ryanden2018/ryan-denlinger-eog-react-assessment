@@ -27,8 +27,8 @@ const PlotActualizer = () => {
 
   return (
     <LineChart
-      width={500}
-      height={300}
+      width={600}
+      height={400}
       data={data}
     >
       <CartesianGrid strokeDasharray="3 3" />
