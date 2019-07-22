@@ -1,5 +1,3 @@
-// TODO: this file is too long, split it into two components
-
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as actions from "../store/actions";
