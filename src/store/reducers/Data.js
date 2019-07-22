@@ -45,22 +45,9 @@ const newMeasurementReceived = (state, action) => {
   };
 };
 
-const intervalDataReceived = (state, action) => {
-  const data = state.data;
-  const { getLastKnownMeasurement } = action;
-  data.push( getLastKnownMeasurement );
-  return {
-    ...state,
-    data: data.matp( measurement => {
-      return {...measurement};
-    }),
-  };
-};
-
 const handlers = {
   [actions.HISTORY_DATA_RECEIVED]: historyDataReceived,
   [actions.NEW_MEASUREMENT_RECEIVED]: newMeasurementReceived,
-  [actions.INTERVAL_DATA_RECEIVED]: intervalDataReceived,
 };
 
 export default (state = initialState, action) => {
