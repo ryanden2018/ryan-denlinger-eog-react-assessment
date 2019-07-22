@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as actions from "../store/actions";
 import { Provider, createClient, useQuery } from "urql";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import PlotActualizer from "./PlotActualizer";
 
 const client = createClient({
   url: "https://react.eogresources.com/graphql"
@@ -56,20 +57,12 @@ const Plot = (props) => {
       if (!data) return;
       const { getMeasurements } = data;
       console.log(getMeasurements)
-      //if(getMultipleMeasurements
-      //const { measurements } = getMultipleMeasurements[0];
-      //console.log(measurements) /////// FIXME
-      //dispatch({ type: actions.HISTORY_DATA_RECEIVED, getHistoryForMetric });
+      dispatch({ type: actions.HISTORY_DATA_RECEIVED, getMeasurements });
     },
     [dispatch, data, error]
   );
 
-  
-
   if (fetching) return <LinearProgress />;
 
-
-  return (
-    <div></div>
-  );
+  return <PlotActualizer />;
 };
