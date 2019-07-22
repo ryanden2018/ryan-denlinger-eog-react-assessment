@@ -4,7 +4,7 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
-const getData = state => {
+const getData = (state) => {
   const { data } = state.data;
   return data.map( measurement => {
     return {

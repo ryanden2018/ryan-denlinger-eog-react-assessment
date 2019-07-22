@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PlotMeta from "./PlotMeta";
+import RealTimeDisplay from "./RealTimeDisplay";
 
 // note: this is an inelegant solution to the problem that only
 // two quantities (tubingPressure and oilTemp) are receiving updates
@@ -25,6 +26,7 @@ const PlotContainer = () => {
       <br />
       <p><b>Note:</b> the remaining quantities are not receiving updates via subscription for some
       reason, which is why I have chosen not to include them.</p>
+      <RealTimeDisplay />
       <PlotMeta metricName={metric} />
     </div>
   );
