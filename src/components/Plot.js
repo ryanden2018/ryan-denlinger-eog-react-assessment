@@ -56,7 +56,6 @@ const Plot = (props) => {
       }
       if (!data) return;
       const { getMeasurements } = data;
-      console.log(getMeasurements)
       dispatch({ type: actions.HISTORY_DATA_RECEIVED, getMeasurements });
     },
     [dispatch, data, error]
